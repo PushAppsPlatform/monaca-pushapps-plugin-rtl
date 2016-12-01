@@ -28,128 +28,6 @@
         <access origin="*.pushapps.mobi" />
     </config-file>
 
-    <preference name="PA_SDK_KEY" />
-    <preference name="PA_GOOGLE_PROJECT_NUMBER" />
-
-    <!-- android -->
-    <platform name="android">
-        <config-file>
-            <access origin="*.pushapps.mobi" />
-        </config-file>
-
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="PushApps" >
-                <param name="android-package" value="mobi.pushapps.plugins.PushAppsPlugin"/>
-                <param name="onload" value="true" />
-            </feature>
-        </config-file>
-
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-            <uses-permission android:name="android.permission.WAKE_LOCK" />
-            <uses-permission android:name="android.permission.VIBRATE"/>
-            <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-            <permission android:name="${applicationId}.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-            <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
-        </config-file>
-
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity
-                    android:name="mobi.pushapps.PAActivity"
-                    android:configChanges="orientation|keyboardHidden" >
-                <intent-filter>
-                    <action android:name="android.intent.action.VIEW" />
-
-                    <category android:name="android.intent.category.DEFAULT" />
-                    <category android:name="android.intent.category.BROWSABLE" />
-
-                    <data android:scheme="pushapps-$PA_SDK_KEY" />
-                </intent-filter>
-            </activity>
-            <activity
-                    android:name="mobi.pushapps.PAPopup"
-                    android:configChanges="orientation|keyboardHidden"
-                    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-            <meta-data
-                    android:name="PushApps_SdkKey"
-                    android:value="$PA_SDK_KEY" />
-            <meta-data
-                    android:name="PushApps_SenderId"
-                    android:value="pa:$PA_GOOGLE_PROJECT_NUMBER" />
-
-            <receiver
-                    android:name="mobi.pushapps.sync.PASyncConfigurationReceiver"
-                    android:enabled="true" >
-                <intent-filter>
-                    <action android:name="mobi.pushapps.sync.SYNC_CONFIGURATIONS" />
-                </intent-filter>
-            </receiver>
-            <receiver
-                    android:name="mobi.pushapps.sync.PASyncRecommendationsReceiver"
-                    android:enabled="true" >
-                <intent-filter>
-                    <action android:name="mobi.pushapps.sync.SYNC_RECOMMENDATIONS" />
-                </intent-filter>
-            </receiver>
-            <receiver
-                    android:name="mobi.pushapps.events.PASyncEventsReceiver"
-                    android:enabled="true" >
-                <intent-filter>
-                    <action android:name="mobi.pushapps.events.SYNC_EVENTS" />
-                </intent-filter>
-            </receiver>
-            <receiver
-                    android:name="com.google.android.gms.gcm.GcmReceiver"
-                    android:exported="true"
-                    android:permission="com.google.android.c2dm.permission.SEND" >
-                <intent-filter>
-                    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                    <category android:name="$PACKAGE_NAME" />
-                </intent-filter>
-            </receiver>
-
-            <service
-                    android:name="mobi.pushapps.gcm.PAGcmListenerService"
-                    android:exported="false" >
-                <intent-filter>
-                    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                    <category android:name="$PACKAGE_NAME" />
-                </intent-filter>
-            </service>
-            <service
-                    android:name="mobi.pushapps.gcm.PAInstanceIDListenerService"
-                    android:exported="false" >
-                <intent-filter>
-                    <action android:name="com.google.android.gms.iid.InstanceID" />
-                </intent-filter>
-            </service>
-            <service
-                    android:name="mobi.pushapps.gcm.PARegistrationIntentService"
-                    android:exported="false" >
-            </service>
-        </config-file>
-
-        <source-file src="src/android/libs/pushappssdk.jar" target-dir="libs/" />
-
-        <source-file src="src/android/plugin/PushAppsPlugin.java" target-dir="src/mobi/pushapps/plugins/" />
-
-        <source-file src="src/android/res/layout/pushapps_small.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_activity.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_content1.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_content2.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_action_buttons1.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_action_buttons2.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_poll_images1.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_poll_text1.xml" target-dir="res/layout/" />
-        <source-file src="src/android/res/layout/pushapps_poll_text2.xml" target-dir="res/layout/" />
-
-        <framework src="com.android.support:support-v13:23+" />
-        <framework src="com.google.android.gms:play-services-gcm:+" />
-
-    </platform>
-
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -163,10 +41,15 @@
             <access origin="*.pushapps.mobi" />
         </config-file>
 
-        <resource-file src="src/ios/PANotificationCustomVC.xib"/>
-
         <header-file src="src/ios/CDVPushApps.h" target-dir="ios"/>
         <source-file src="src/ios/CDVPushApps.m" target-dir="ios"/>
+
+        <header-file src="src/ios/AppDelegate+notification.h" target-dir="ios"/>
+        <source-file src="src/ios/AppDelegate+notification.m" target-dir="ios"/>
+
+        <header-file src="src/ios/PATag.h" target-dir="ios"/>
+        <header-file src="src/ios/PushApps.h" target-dir="ios"/>
+        <source-file src="src/ios/PushApps" framework="true"/>
 
         <!-- PushApps framework -->
         <framework src="src/ios/PushApps.framework" custom="true" />
