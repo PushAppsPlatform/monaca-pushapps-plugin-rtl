@@ -22,8 +22,6 @@
         <clobbers target="PushNotification" />
     </js-module>
 
-    <dependency id="org.apache.cordova.device" url="https://github.com/apache/cordova-plugin-device.git"  />
-
     <config-file>
         <access origin="*.pushapps.mobi" />
     </config-file>
