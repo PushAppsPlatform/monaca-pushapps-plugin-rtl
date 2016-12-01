@@ -49,11 +49,8 @@
 
         <header-file src="src/ios/PATag.h" target-dir="ios"/>
         <header-file src="src/ios/PushApps.h" target-dir="ios"/>
-        <source-file src="src/ios/PushApps" framework="true"/>
-
-        <!-- PushApps framework -->
-        <framework src="src/ios/PushApps.framework" custom="true" />
-
+        <source-file src="src/ios/PushApps" framework="true"/
+                     
         <!-- System frameworks -->
         <framework src="Foundation.framework" weak="true" />
         <framework src="UIKit.framework" weak="true" />
