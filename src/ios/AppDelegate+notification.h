@@ -6,7 +6,7 @@
 //
 //
 
-#import <PushApps/PushApps.h>
+#import "PushApps.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate (notification) <PushAppsDelegate>
