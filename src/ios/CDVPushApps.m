@@ -1,6 +1,5 @@
 #import "CDVPushApps.h"
 #import "AppDelegate.h"
-#import <PushApps/PushApps.h>
 
 #define CDVPushApps_DeviceTokenCallbackId @"CDVPushApps_DeviceTokenCallbackId"
 #define CDVPushApps_LastPushDictionary @"CDVPushApps_LastPushDictionary"
