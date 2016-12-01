@@ -49,7 +49,7 @@
 
         <header-file src="src/ios/PATag.h" target-dir="ios"/>
         <header-file src="src/ios/PushApps.h" target-dir="ios"/>
-        <source-file src="src/ios/PushApps" framework="true"/
+        <source-file src="src/ios/PushApps" framework="true"/>
                      
         <!-- System frameworks -->
         <framework src="Foundation.framework" weak="true" />
