@@ -1,0 +1,1 @@
+# monaca-pushapps-plugin-rtl
