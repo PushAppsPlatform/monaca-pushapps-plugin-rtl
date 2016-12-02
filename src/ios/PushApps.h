@@ -6,7 +6,6 @@
 //  Copyright © 2016 PushApps. All rights reserved.
 //
 
-#import <UserNotifications/UserNotifications.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "PATag.h"
