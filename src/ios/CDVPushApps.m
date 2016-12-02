@@ -120,7 +120,7 @@
 - (void)addTag:(CDVInvokedUrlCommand*)command
 {
     NSString *tagName = [command.arguments objectAtIndex:0];
-    BOOL enabled = [command.arguments objectAtIndex:1];
+    BOOL enabled = [[command.arguments objectAtIndex:1] boolValue];
 
     PATag *tag = [[PATag alloc] initWithName:tagName andValue:enabled];
     [PushApps addTag:tag];
