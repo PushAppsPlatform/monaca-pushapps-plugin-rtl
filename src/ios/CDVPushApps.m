@@ -191,27 +191,11 @@
 {
     // Clear application badge
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-
+    
+    NSString *articleUrlStr = [[pushNotification objectForKey:@"pa"] objectForKey:@"url"];
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    NSError *innerJSONparsingError;
-    for (id key in pushNotification) {
-        if ([[pushNotification objectForKey:key] isKindOfClass:[NSString class]]) {
-
-            NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData: [[pushNotification objectForKey:key] dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: &innerJSONparsingError];
-
-            if (JSON) {
-                [dictionary setObject:JSON forKey:key];
-            }
-            else {
-                [dictionary setObject:[pushNotification objectForKey:key] forKey:key];
-            }
-
-        }
-        else {
-            [dictionary setObject:[pushNotification objectForKey:key] forKey:key];
-        }
-    }
-
+    [dictionary setObject:articleUrlStr forKey:@"PAArticleUrl"];
+    
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&error];
 
