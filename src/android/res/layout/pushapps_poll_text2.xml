@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pushapps_notification_base_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/pushapps_notification_wide_image_upper_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp" >
+
+        <ImageView
+            android:id="@+id/pushapps_notification_main_image_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/pushapps_notification_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/pushapps_notification_subtitle"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/pushapps_notification_title"
+            android:alpha="0.6"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pushapps_notification_subtitle"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/pushapps_notification_share_big_text_view"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_subtitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@android:color/white"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pushapps_notification_upper_layout_no_main_image"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp" >
+
+        <ImageView
+            android:id="@+id/pushapps_notification_icon_no_main_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_title_no_main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/pushapps_notification_icon_no_main_image"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="#858585"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_subtitle_no_main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pushapps_notification_title_no_main_image"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/pushapps_notification_bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_bottom_layout_first_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/pushapps_notification_bottom_first_text_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="3"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:textColor="#858585"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_bottom_layout_second_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:visibility="gone" >
+            
+            <TextView 
+                android:layout_width="2px"
+                android:layout_height="wrap_content"
+                android:background="#858585"
+                android:layout_alignTop="@+id/pushapps_notification_bottom_second_text_view"
+                android:layout_alignBottom="@+id/pushapps_notification_bottom_second_text_view"
+                android:layout_marginTop="4dp"
+                />
+
+            <TextView
+                android:id="@+id/pushapps_notification_bottom_second_text_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="3"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:textColor="#858585"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_bottom_layout_third_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone" >
+            
+            <TextView 
+                android:layout_width="2px"
+                android:layout_height="wrap_content"
+                android:background="#858585"
+                android:layout_alignTop="@+id/pushapps_notification_bottom_third_text_view"
+                android:layout_alignBottom="@+id/pushapps_notification_bottom_third_text_view"
+                android:layout_marginTop="4dp"
+                />
+
+            <TextView
+                android:id="@+id/pushapps_notification_bottom_third_text_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="3"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:textColor="#858585"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

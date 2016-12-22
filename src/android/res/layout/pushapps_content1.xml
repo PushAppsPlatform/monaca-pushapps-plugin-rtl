@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pushapps_notification_base_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/pushapps_notification_upper_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/pushapps_notification_main_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="120dp"
+            android:maxWidth="140dp"
+            android:minWidth="80dp" />
+
+        <ImageView
+            android:id="@+id/pushapps_notification_main_play_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/pushapps_notification_main_image_view"
+            android:layout_alignBottom="@+id/pushapps_notification_main_image_view"
+            android:layout_alignRight="@+id/pushapps_notification_main_image_view"
+            android:layout_alignLeft="@+id/pushapps_notification_main_image_view"
+            android:scaleType="center" />
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_share_and_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pushapps_notification_upper_divider"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@+id/pushapps_notification_time_text_view"
+            android:layout_toLeftOf="@+id/pushapps_notification_main_image_view" >
+
+            <RelativeLayout
+                android:id="@+id/pushapps_notification_submain_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="2dp" >
+
+                <ImageView
+                    android:id="@+id/pushapps_notification_icon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/pushapps_notification_icon"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textColor="#aaaaaa"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/pushapps_notification_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/pushapps_notification_submain_relative_layout"
+                android:ellipsize="end"
+                android:lines="4"
+                android:gravity="right"
+                android:textColor="@android:color/white"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pushapps_notification_time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/pushapps_notification_main_image_view"
+            android:layout_marginLeft="2dp"
+            android:alpha="0.8"
+            android:textColor="#aaaaaa"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/pushapps_notification_share_big_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/pushapps_notification_main_image_view"
+            android:layout_alignParentLeft="true"
+            android:src="@android:drawable/ic_menu_share" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_upper_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/pushapps_notification_main_image_view"
+            android:alpha="0.7"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pushapps_notification_upper_layout_no_main_image"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp" >
+
+        <ImageView
+            android:id="@+id/pushapps_notification_icon_no_main_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_title_no_main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/pushapps_notification_share_small_text_view"
+            android:layout_toLeftOf="@+id/pushapps_notification_icon_no_main_image"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_subtitle_no_main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pushapps_notification_title_no_main_image"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/pushapps_notification_share_small_text_view"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="2"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_time_text_view_no_main_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:alpha="0.8"
+            android:textColor="#aaaaaa"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_share_small_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:drawable/ic_menu_share" />
+
+        <TextView
+            android:id="@+id/pushapps_notification_upper_divider_no_main_image"
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.7"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pushapps_notification_bottom_recommendation_title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/pushapps_notification_bottom_recommendation_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="right|center_vertical"
+            android:paddingRight="2dp"
+            android:textColor="#aaaaaa"
+            android:textSize="11dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/pushapps_notification_outbrain_logo_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/pushapps_notification_outbrain_logo_image_view"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended by "
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/pushapps_notification_bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_bottom_layout_first_layout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/pushapps_notification_promoted_text_first"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="1dp"
+                android:textColor="#d5d5d5"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_bottom_first_image_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/pushapps_notification_promoted_text_first"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_bottom_first_play_image_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/pushapps_notification_bottom_first_text_views_layout"
+                android:scaleType="center" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/pushapps_notification_bottom_first_text_views_layout"
+                android:layout_alignParentBottom="true"
+                android:layout_alignTop="@+id/pushapps_notification_bottom_first_text_views_layout"
+                android:alpha="0.7"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:id="@+id/pushapps_notification_bottom_first_text_views_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_source_promo_first_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:lines="1"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#868686"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_first_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="3"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#d5d5d5"
+                    android:textSize="9dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_source_first_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:lines="1"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#868686"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_bottom_layout_second_layout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/pushapps_notification_promoted_text_second"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="1dp"
+                android:textColor="#d5d5d5"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_bottom_second_image_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/pushapps_notification_promoted_text_second"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_bottom_second_play_image_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/pushapps_notification_bottom_second_text_views_layout"
+                android:scaleType="center" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/pushapps_notification_bottom_second_text_views_layout"
+                android:layout_alignParentBottom="true"
+                android:layout_alignTop="@+id/pushapps_notification_bottom_second_text_views_layout"
+                android:alpha="0.7"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:id="@+id/pushapps_notification_bottom_second_text_views_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_source_promo_second_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:lines="1"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#868686"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_second_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="3"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#d5d5d5"
+                    android:textSize="9dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_source_second_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:lines="1"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#868686"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pushapps_notification_bottom_layout_third_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/pushapps_notification_promoted_text_third"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="1dp"
+                android:textColor="#d5d5d5"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_bottom_third_image_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/pushapps_notification_promoted_text_third"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_bottom_third_play_image_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/pushapps_notification_bottom_third_text_views_layout"
+                android:scaleType="center" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/pushapps_notification_bottom_third_text_views_layout"
+                android:layout_alignParentBottom="true"
+                android:layout_alignTop="@+id/pushapps_notification_bottom_third_text_views_layout"
+                android:alpha="0.7"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:id="@+id/pushapps_notification_bottom_third_text_views_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_source_promo_third_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:lines="1"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#868686"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_third_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="3"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#d5d5d5"
+                    android:textSize="9dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pushapps_notification_bottom_source_third_text_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:lines="1"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#868686"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
