@@ -83,7 +83,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/pushapps_notification_submain_relative_layout"
                 android:ellipsize="end"
-                android:lines="4"
+                android:maxLines="4"
                 android:gravity="right"
                 android:textColor="@android:color/white"
                 android:textSize="12dp"
@@ -109,14 +109,14 @@
             android:layout_alignParentLeft="true"
             android:src="@android:drawable/ic_menu_share" />
 
-        <TextView
-            android:id="@+id/pushapps_notification_upper_divider"
-            android:layout_width="fill_parent"
-            android:layout_height="1px"
-            android:layout_below="@+id/pushapps_notification_main_image_view"
-            android:alpha="0.7"
-            android:background="@android:color/white" />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pushapps_notification_upper_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:alpha="0.7"
+        android:background="@android:color/white" />
 
     <RelativeLayout
         android:id="@+id/pushapps_notification_upper_layout_no_main_image"
