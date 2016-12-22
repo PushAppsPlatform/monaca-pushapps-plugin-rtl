@@ -16,6 +16,9 @@ import mobi.pushapps.models.PANotification;
 import mobi.pushapps.tags.PATag;
 import mobi.pushapps.tags.PATagsListener;
 
+import com.outbrain.OBSDK.Outbrain;
+import com.outbrain.OBSDK.OutbrainException;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
@@ -54,7 +57,7 @@ public class PushAppsPlugin extends CordovaPlugin {
 
         try {
             if (ACTION_ON_DEVICE_READY.equals(action)) {
-                return internalOnDeviceReady(callbackContext);
+                return internalOnDeviceReady(data, callbackContext);
             }
             if (ACTION_REGISTER.equals(action)) {
                 return internalRegister(callbackContext);
@@ -189,7 +192,18 @@ public class PushAppsPlugin extends CordovaPlugin {
     }
 
     // Internal methods
-    private boolean internalOnDeviceReady(CallbackContext callbackContext) {
+    private boolean internalOnDeviceReady(JSONArray data, CallbackContext callbackContext) {
+        try {
+            String obKey = data.getString(1);
+            if (obKey != null) {
+                Outbrain.register(cordova.getActivity().getApplicationContext(), obKey);
+            }
+        }
+        catch (OutbrainException ex) {
+            // handle exception
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         checkIntentExtras(cordova.getActivity().getIntent());
         return true;
     }

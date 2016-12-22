@@ -6,8 +6,8 @@ var exec = cordova.require('cordova/exec');
 
 var PushNotification = function() {};
 
-PushNotification.prototype.onDeviceReady = function (sdkKey) {
-    exec(null, null, 'PushApps', 'onDeviceReady', [ sdkKey ]);
+PushNotification.prototype.onDeviceReady = function (sdkKey, outbrainKey) {
+    exec(null, null, 'PushApps', 'onDeviceReady', [ sdkKey, outbrainKey ]);
 };
 
 PushNotification.prototype.registerToPushNotifications = function (successCallback, errorCallback) {
