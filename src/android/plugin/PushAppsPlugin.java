@@ -15,6 +15,7 @@ import mobi.pushapps.gcm.PAGcmListener;
 import mobi.pushapps.models.PANotification;
 import mobi.pushapps.tags.PATag;
 import mobi.pushapps.tags.PATagsListener;
+import mobi.pushapps.utils.PALogger;
 
 import com.outbrain.OBSDK.Outbrain;
 import com.outbrain.OBSDK.OutbrainException;
@@ -193,6 +194,7 @@ public class PushAppsPlugin extends CordovaPlugin {
 
     // Internal methods
     private boolean internalOnDeviceReady(JSONArray data, CallbackContext callbackContext) {
+        PALogger.setLogsEnabled(true);
         try {
             String obKey = data.getString(1);
             if (obKey != null) {
