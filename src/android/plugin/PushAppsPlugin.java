@@ -198,7 +198,14 @@ public class PushAppsPlugin extends CordovaPlugin {
         try {
             String obKey = data.getString(1);
             if (obKey != null) {
+                boolean testMode = false;
+                try {
+                    testMode = data.getBoolean(2)
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 Outbrain.register(cordova.getActivity().getApplicationContext(), obKey);
+                Outbrain.setTestMode(testMode);
             }
         }
         catch (OutbrainException ex) {
