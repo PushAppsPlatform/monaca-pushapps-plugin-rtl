@@ -200,7 +200,7 @@ public class PushAppsPlugin extends CordovaPlugin {
             if (obKey != null) {
                 boolean testMode = false;
                 try {
-                    testMode = data.getBoolean(2)
+                    testMode = data.getBoolean(2);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
