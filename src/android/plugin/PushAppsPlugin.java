@@ -175,6 +175,10 @@ public class PushAppsPlugin extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+
+        PALogger.setLogsEnabled(true);
+        Outbrain.register(cordova.getActivity().getApplicationContext(), "MAARIFJ0ICN35O8LB57DDK3BD");
+        PALogger.log("custom registration to Outbrain from plugin");
     }
 
     @Override
