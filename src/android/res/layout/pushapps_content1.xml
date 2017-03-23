@@ -218,18 +218,19 @@
             android:orientation="horizontal"
             android:visibility="gone" >
 
-            <ImageView
-                android:id="@+id/pushapps_notification_outbrain_logo_image_view"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:scaleType="fitXY" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Recommended by "
                 android:textColor="#aaaaaa"
                 android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/pushapps_notification_outbrain_logo_image_view"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:scaleType="fitXY" />
+
         </LinearLayout>
     </RelativeLayout>
 
