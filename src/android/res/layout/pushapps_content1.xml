@@ -86,7 +86,7 @@
                 android:maxLines="4"
                 android:gravity="right"
                 android:textColor="@android:color/white"
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
